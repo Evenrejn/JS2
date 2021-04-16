@@ -17,5 +17,6 @@ const renderGoodsList = (list = goods) => {
     });
 };
 
+
 renderGoodsList(goods);
 
