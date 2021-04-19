@@ -34,10 +34,10 @@ header {
     max-width: 100%;
     min-height: 600px;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     padding: 50px 30px;
     place-content: flex-start;
+    justify-content: center;
 }
 
 .goods-item {
@@ -47,4 +47,10 @@ header {
     background: lightgray;
     text-align: center;
     margin-bottom: 30px;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+.goods-item:hover {
+    background-color: #b4b4b4;
 }
