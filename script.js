@@ -9,7 +9,6 @@ const goods = [
 
 const renderGoodsItem = (title = "item", price = "0") => `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
 
-
 const renderGoodsList = (list = []) => {
     list.forEach(function(item) {
         document.querySelector(".goods-list").innerHTML = document.querySelector(".goods-list").innerHTML + renderGoodsItem(item.title, item.price);
@@ -58,18 +57,21 @@ const list = new GoodsList();
 list.fetchGoods();
 list.render();
 
-
-class shopBasket {
+class shopBasket extends GoodsList {
     constructor() {
+        super();
     }
+    buy() {}
+    delete() {}
 }
 
-class shopBasketItem {
+class shopBasketItem extends GoodsList {
     constructor() {
+        super();
     }
+    addOne() {}
+    removeItem() {}
+    deleteItem() {}
 }
-
-
 
 renderGoodsList(goods);
-
