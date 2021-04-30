@@ -5,12 +5,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <button class="cart-button" type="button">Корзина</button>
-</header>
-<main>
-  <div class="goods-list"></div>
-</main>
+  <div id="app">
+      <header>
+          <input type="text" v-model="searchLine" class="goods-search">
+          <button class="search-button" type="button" @click="clickHandler">Искать</button>
+          <button class="cart-button" type="button" @click="clickCart">Корзина</button>
+      </header>
+      <main>
+          <div class="goods-list">
+              <div class="goods-item" v-for="good in filteredGoods">
+                  <h3>{{ good.product_name }}</h3>
+                  <p>{{ good.price }}</p>
+              </div> 
+              <p v-if="filteredGoods.length == 0">Нету товаров для отображения</p>
+              <h3 v-if="isVisibleCart == true">Состав корзины</h3>
+        </div>
+     </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
